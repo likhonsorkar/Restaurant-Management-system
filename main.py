@@ -54,18 +54,44 @@ def admin_menu():
         print("6. Exit")
         choice = input("Enter your choice: ")
         if choice == '1':
-            pass
+            item_name = input("Enter Item Name: ")
+            item_price = int(input("Enter Item Price: "))
+            item_quentity = int(input("Enter Item Quentity: "))
+            item = FoodItem(item_name,item_price,item_quentity)
+            admin.add_new_item(rest, item)
         elif choice == '2':
-            pass
+            e_name = input("Eployee Name: ")
+            e_mail = input("Eployee Email: ")
+            e_phone = input("Eployee Phone: ")
+            e_address = input("Eployee Address: ")
+            e_age = input("Eployee Age: ")
+            e_designation = input("Eployee Designation: ")
+            e_salary = input("Eployee Salary: ")
+            employee = Employe(e_name, e_phone,e_mail, e_address, e_age, e_designation, e_salary)
+            admin.add_employee(rest, employee)
         elif choice == '3':
-            pass
+            admin.view_employee(rest)
         elif choice == '4':
-            pass
+            admin.view_item(rest)
         elif choice == '5':
-            pass
+            ditem_name = input("Item Name: ")
+            admin.delete_item(rest, ditem_name)
         elif choice == '6':
             break
         else:
              print("Wrong Choice")
 
-admin_menu()
+while True:
+     print("Wellcome!!")
+     print("1. Customer")
+     print("2. Admin")
+     print("3. Exit")
+     choice = input("Enter Your Choice: ")
+     if choice == '1':
+          customer_menu()
+     elif choice == '2':
+          admin_menu()
+     elif choice == '3':
+          break
+     else:
+          print("Invalid Choice")

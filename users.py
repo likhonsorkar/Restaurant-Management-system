@@ -47,6 +47,10 @@ class Admin(Users):
        restaurent.view_employee()
     def add_new_item(self,restaurent,item):
         restaurent.menu.add_item(item)
+    def view_item(self,restaurent):
+        restaurent.menu.show_item()
+    def delete_item(self,restaurent,item_name):
+        restaurent.menu.remove_item(item_name)
 
 # admin = Admin("Likhon", 8801310847553, "contact@likhon.com.bd", "Sirajganj")
 # rest = Restaurent("Foodie's Heaven")
